@@ -3,7 +3,7 @@ var socket=require('socket.io');
 
 //App setup
 var app=express();
-var server=app.listen(4000, function(){
+var server=app.listen(process.env.PORT, function(){
     console.log('listening to request on prt 4000');
 });
 
