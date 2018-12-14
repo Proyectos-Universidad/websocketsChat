@@ -14,12 +14,10 @@ export class ChatComponent implements OnInit {
   messages: string[] = [];
 
   ngOnInit() {
-    console.log('mierda');
     this.chatService
       .getMessages()
       .subscribe((message: string) => {
         this.messages.push(message);
-        console.log(this.messages);
       });
   }
 
