@@ -9,8 +9,8 @@ router.get('/', getAll);
 router.get('/current', getCurrent);
 router.get('/:id', getById);
 router.put('/:id', update);
+router.get('/exists/:username', existsByUsername);
 router.delete('/:id', _delete);
-
 module.exports = router;
 
 function authenticate(req, res, next) {
@@ -40,6 +40,12 @@ function getCurrent(req, res, next) {
 function getById(req, res, next) {
     userService.getById(req.params.id)
         .then(user => user ? res.json(user) : res.sendStatus(404))
+        .catch(err => next(err));
+}
+
+function existsByUsername(req, res, next) {
+    userService.getByUsername(req.params.username)
+        .then(user => user ? res.json(true) : res.json(false))
         .catch(err => next(err));
 }
 
