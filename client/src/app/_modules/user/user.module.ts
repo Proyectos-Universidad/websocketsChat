@@ -3,7 +3,13 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import {
-  MatTableModule
+  MatTableModule,
+  MatSidenavModule,
+  MatIconModule,
+  MatTabsModule,
+  MatCardModule,
+  MatListModule,
+  MatDividerModule
 } from '@angular/material';
 
 
@@ -31,11 +37,23 @@ import { ChatComponent } from './components/chat/chat.component';
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatTabsModule,
+    MatCardModule,
+    MatListModule,
+    MatDividerModule
   ], 
   exports:[
     UserListContainerComponent,
-    MatTableModule
+    MatTableModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatTabsModule,
+    MatCardModule,
+    MatListModule,
+    MatDividerModule
   ]
 })
 export class UserModule { }
